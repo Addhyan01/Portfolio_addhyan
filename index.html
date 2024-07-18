@@ -125,7 +125,7 @@
                 <div class="layer">
                     <h3>University Website</h3>
                     <p>this website is help to students and parents for Addmission, fee structure and all details of university, etc.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://addhyan01.github.io/university-website/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
             <div class="work">
@@ -133,7 +133,7 @@
                 <div class="layer">
                     <h3>Calculator App</h3>
                     <p>i build a calculator App using HTML, CSS, and JavaScript.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://cuvette-3rd-project.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
             <div class="work">
@@ -141,7 +141,7 @@
                 <div class="layer">
                     <h3>Rock, Paper, Scissors game</h3>
                     <p>IThis is Rock, Paper, Scissors game using HTML, CSS, and JavaScript.     </p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://cuvette-project-4-javascript.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>
@@ -171,6 +171,7 @@
                     <textarea name="Message" rows="6" placeholder="Your Message " ></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg" ></span>
             </div>
         </div>
      </div>
@@ -230,12 +231,19 @@
 <script>
     const scriptURL = 'https://script.google.com/macros/library/d/1WTpTR-BLlgpR1RDvzWmn3KnHJs3RsDt4pgUEFOhxgQusQkrD2DRyTPvK/2'
     const form = document.forms['submit-to-google-sheet']
+    const msg = getElementById("msg")
   
     form.addEventListener('submit', e => {
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
+        .then(response => {
+                msg.innerHTML = "message sent Sucessfully";
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                // form.reset();
+        })
+        .catch(error =>  msg.innerHTML = "message sent Sucessfully");
     })
   </script>
 </body>
