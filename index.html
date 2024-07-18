@@ -42,15 +42,61 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="./images/user1.png" alt="">
+                    <img src="./images/user11.png" alt="">
                 </div>
                 <div class="about-col-2">
-                    <h1>About Me</h1>
+                    <h1 class="sub-titile">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa perferendis mollitia nostrum omnis provident tempora, tenetur, cumque repellendus numquam quibusdam consequatur labore sequi minima magnam? Distinctio numquam voluptatem aliquam maxime omnis. Quaerat distinctio nesciunt ratione at placeat iusto. Animi, sit sapiente ut exercitationem suscipit cupiditate! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque facere dolorum hic nostrum possimus, velit consectetur unde autem illo, odit et. Eos soluta commodi et?</p>
+
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('exprerince')" >Expreiences</p>
+                        <p class="tab-links" onclick="opentab('education')" >Education</p>
+
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/ App interfaces</li>
+                            <li><span>Web development</span><br>Designing Web/ App interfaces</li>
+                            <li><span>App Development</span><br>Designing Web/ App interfaces</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="exprerince">
+                        <ul>
+                            <li><span>Nov-2020 TO Feb-2021 </span><br>Wordpres Web developer Intern At Tesoure ptv. Ltd </li>
+                            <li><span>June-2023 TO Sep-2023</span><br>Full Stack Web developer Intern at Aztech Technology & Engineering Ptv. Ltd.</li>
+                            <li><span>App Development</span><br>Designing Web/ App interfaces</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>May-2024 to current</span><br> 6 month's Full stack Development Course From Cuvette </li>
+                            <li><span>2021-2023</span><br> Mca From Dayanada Sagar college Of engineering, bangalore </li>
+                            <li><span>2018-2021</span><br> BCA From Arka Jain University, Jamshedpur </li>
+                            
+                        </ul>
+                    </div>
                 </div>
                 
             </div>
         </div>
     </div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link")
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
 </body>
 
 </html>
